@@ -5,28 +5,64 @@
     <title>Title</title>
     <style>
         body {
-            background-color: cadetblue;
+            background-image: url("bg.jpg");
+        }
+
+        .Notification .centered {
+            position: absolute;
+            top: 40%;
+            left: 40%;
+            transform: translate(-40%,-40%);
+            color: black;
+        }
+        .button {
+            background-color:#2e99ff;
+            height: 50px;
+            width: 75px;
+            border-radius: 12px;
+            color: white;
+            transition-duration: 0.5s;
+        }
+        .button:hover {
+            background-color: white;
+            color: black;
+        }
+        input {
+            background-color: yellowgreen;
+            width: 200px;
+            color: black;
+            border-radius: 30%;
+            text-align: center;
         }
     </style>
 </head>
 <body>
-<h2 align="center">Game Đuổi Hình Bắt Chữ</h2>
-<br>
-<hr>
-<div class="MC" style="position: absolute; left: 10px; top: 300px">
-    <img id="mc" src="mc2.jpg" alt="mc">
+<div class="gioithieu">
+    <h2 align="center">Game Đuổi Hình Bắt Chữ</h2>
+    <h3 align="center">Sử dụng các nút chữ cái để nhập đáp án</h3>
+</div>
+<div class="MC" style="position: absolute; left: 10px; top: 220px; height: 150px">
+    <img id="mc" src="mc.png" alt="mc">
+</div>
+<div class="Notification" style="position: absolute; left: 150px; top: 80px">
+    <img id="notifi" src="talk.jpg" alt="talk" style="width: 100%">
+    <div class="centered">
+        <p id="result" style="font-family: Centaur; font-size: 20px; text-align: center">Xin Chào ! Tôi là MC Xuân Bắc. Chào mừng bạn đến với trò chơi !!!</p>
+    </div>
 </div>
 <div class="game" align="center">
-    <h3>Mời bạn đoán </h3>
+    <p id="level"><b>Level : 1</b></p>
+    <p id="point"><b>Điểm thưởng : 1000</b></p> <p><b>(Sử dụng gợi ý sẽ bị trừ điểm)</b></p>
     <img id="game" src="cau1.png" alt="cauhoi" style="width: 300px; height: 200px">
 <br>
 <br>
     <div style="text-align: center">
-        <input type="text" id="answer" style="width: 100px">
+        <input type="text" id="answer">
     </div>
-    <p id="result"></p>
-    <button onclick="check()">Check</button>
-    <button onclick="next()">Next</button>
+    <br>
+    <button class="button" onclick="check()">Kiểm tra</button>
+    <button class="button" onclick="next()">Câu đố tiếp theo</button>
+    <button class="button" onclick="hint()">Gợi ý</button>
 <br>
     <br>
 
