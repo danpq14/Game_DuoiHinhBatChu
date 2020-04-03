@@ -4,27 +4,6 @@ let dapAn;
 let point = 1000;
 let pointHint = 1000;
 
-//-------Level and Point---------//
-function levelAndPoint() {
-    switch (level) {
-        case 0 :
-            point = 1000;
-            break;
-        case 1 :
-            point = 2000;
-            break;
-        case 2 :
-            point = 4000;
-            break;
-        case 3 :
-            point = 8000;
-            break;
-        case 4 :
-            point = 12000;
-            break;
-    }
-}
-
 
 //----------drawQuestion---------//
 function draw() {
@@ -44,17 +23,6 @@ function clear() {
 }
 
 
-//----------Kiểm tra đáp án-----------//
-function check() {
-    if (dapAn === q[level].correct) {
-        document.getElementById('result').innerHTML = ' Bạn đã trả lời chính xác ';
-    }
-    else {
-        document.getElementById('result').innerHTML = 'Bạn chưa trả lời chính xác';
-    }
-}
-
-
 //--------Hint---------//
 function hint() {
     document.getElementById('result').innerHTML = q[level].hint;
@@ -67,10 +35,10 @@ function hint() {
 function next() {
     if (dapAn === q[level].correct) {
         level++;
+        point += 2000;
         draw();
         clear();
-        levelAndPoint();
-        pointHint *= 1.5;
+        pointHint *= 1.2;
         document.getElementById('level').innerHTML ='<b>' +'Level : ' + (level+1)+'</b>';
         document.getElementById('point').innerHTML ='<b>'+ 'Điểm thưởng : ' + point + '</b>';
     } else {
