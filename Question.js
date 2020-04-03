@@ -26,21 +26,21 @@ q[4] = {
 };
 q[5] = {
     correct : 'CHUANXAC',
-    diachi : 'cau6.png',
+    diachi : 'cau6.jpg',
     hint : 'Giấy xác nhận chất lượng và Xác ướp'
 };
 q[6] = {
     correct : 'VOIHOASEN',
-    diachi : 'cau7.png',
+    diachi : 'cau7.jpg',
     hint : 'Một vật dụng trong nhà tắm'
 };
 q[7] = {
     correct : 'LOLIEU',
-    diachi : 'cau8.png',
+    diachi : 'cau8.jpg',
     hint : 'Ngược lại với hành động kín kẽ'
 };
 q[8] = {
     correct : 'GIAOTRANH',
-    diachi : 'cau9.png',
+    diachi : 'cau9.jpg',
     hint : 'đánh nhau giữa các lực lượng vũ trang'
 };

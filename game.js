@@ -4,7 +4,6 @@ let dapAn;
 let point = 1000;
 let pointHint = 1000;
 
-
 //----------drawQuestion---------//
 function draw() {
     document.images['game'].src = q[level].diachi;
@@ -13,7 +12,6 @@ function draw() {
 //Cài đặt hàm cho nút button chọn chữ
 function fill(text) {
     document.getElementById('answer').value += text;
-    dapAn = document.getElementById('answer').value;
     console.log(dapAn);
 }
 //Clear
@@ -33,12 +31,13 @@ function hint() {
 
 //----------Next----------//
 function next() {
+    dapAn = document.getElementById('answer').value;
     if (dapAn === q[level].correct) {
         level++;
         point += 2000;
         draw();
         clear();
-        pointHint *= 1.2;
+        pointHint = Math.floor(pointHint*1.2);
         document.getElementById('level').innerHTML ='<b>' +'Level : ' + (level+1)+'</b>';
         document.getElementById('point').innerHTML ='<b>'+ 'Điểm thưởng : ' + point + '</b>';
     } else {
